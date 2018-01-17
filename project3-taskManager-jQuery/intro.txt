@@ -1,0 +1,15 @@
+
+Project Focus
+
+1 remote MongoDB database
+
+2 mLab Cloud Service
+
+3 jQuery Front End
+
+4 Bootstrap UI
+
+5 Tasks & Categories
+
+//////////////////////////////inside mongo shell
+

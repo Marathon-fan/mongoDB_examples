@@ -4,7 +4,19 @@ db.products.insert({
     category: 'Electronics',
     model: '-',
     price: 49.99, 
-    image: 'https://images-na.ssl-images-amazon.com/images/I/61qaMh0rSIL._SL1000_.jpg'
+    image: 'https://images-na.ssl-images-amazon.com/images/I/61qaMh0rSIL._SL1000_.jpg',
     details: 'Echo Dot (2nd Generation) is a hands-free, voice-controlled device that uses Alexa to play music, control smart home devices, make calls, send and receive messages, provide information, read the news, set music alarms, read audiobooks from Audible, control Amazon Video on Fire TV, and more' 
 });
+
+
+
+db.products.insert({
+    name: 'Scala for the Impatient (2nd Edition) 2nd Edition',
+    category: 'book',
+    model: '-',
+    price: 35.71, 
+    image: 'https://images-na.ssl-images-amazon.com/images/I/514y-sLRbkL._SX375_BO1,204,203,200_.jpg',
+    details: 'Interest in the Scala programming language continues to grow for many reasons. Scala embraces the functional programming style without abandoning the object-oriented paradigm, and it allows you to write programs more concisely than in Java. Because Scala runs on the JVM, it can access any Java library and is interoperable with familiar Java frameworks. Scala also makes it easier to leverage the full power of concurrency.' 
+});
+
 
