@@ -6,6 +6,10 @@
   },
   "dependencies": {
     "babel-runtime": "^6.26.0",
-    "meteor-node-stubs": "^0.3.2"
+    "bson": "^1.0.4",
+    "keystone": "^0.3.19",
+    "meteor-node-stubs": "^0.3.2",
+    "mongodb": "~2.1.18",
+    "mongoose": "~4.4.16"
   }
 }

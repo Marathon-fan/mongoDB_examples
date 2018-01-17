@@ -65,5 +65,44 @@ npm install modulename
 
 
 
-//////////////////////////////inside mongo shell
+//////////////////////////////debug: Failed to load c++ bson extension
+
+meteor npm install --save babel-runtime
+
+
+
+//////////////////////////////
+
+"mongoose": "~4.4.16",
+"mongodb": "~2.1.18",
+"keystone": "^0.3.19",
+then
+
+npm install
+finally
+
+rm -rf node_modules/keystone/node_modules/mongodb
+rm -rf node_modules/keystone/node_modules/mongoose
+
+
+//-------------
+
+> npm install bson
+then copy file in:
+
+..\node_modules\bson\build\Release\bson
+From:
+
+..\node_modules\bson\browser_build\bson
+
+//----
+Just upgraded to the master branch, the error is gone.
+
+In package.json:
+
+"keystone": "https://github.com/keystonejs/keystone.git",
+Then
+
+rm -rf node_modules
+npm install
 
