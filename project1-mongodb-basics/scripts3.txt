@@ -1,11 +1,64 @@
 
-# ------
-
+# ------Arrays & Embedded Objects
+# ------push is used to add to an array
 
 
 > db.customers.find().pretty();
 
+> db.customers.insert({first_name:'Peter', last_name:'Carey', age:28, address:{street:'120 Main st', city:'Chicago', state:'IL', zipcode:'37477'}})
+WriteResult({ "nInserted" : 1 })
+> db.customers.find({first_name:'Peter'}).pretty();
+{
+	"_id" : ObjectId("5a5ea046aaec84258713b622"),
+	"first_name" : "Peter",
+	"last_name" : "Carey",
+	"age" : 28,
+	"address" : {
+		"street" : "120 Main st",
+		"city" : "Chicago",
+		"state" : "IL",
+		"zipcode" : "37477"
+	}
+}
 > 
-> db.customers.update({first_name:'Mike'},{first_name:'Mike', last_name:'Hill'})
+
+db.customers.insert({first_name:'George', last_name:'Lopez', services:[{service_id:'linux_hosting', service_name:'Linux Hosting'},{service_id:'email_hosting', service_name:'Email Hosting'}], services_count: 2})
+
+> db.customers.find({first_name:'George'}).pretty();
+
+> db.customers.find({first_name:'George'},{services:1})
+
+> db.customers.find({first_name:'George'},{"services.service_name":1})
+
+> db.customers.update({first_name:'Peter'}, {$push:{services:{service_id:'domain_register', service_name:'Domain Registration'}}})
+
+> db.customers.update({first_name:'Peter'}, {$push:{services:{service_id:'domain_register', service_name:'Domain Registration'}}})
 WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
->
+> 
+> 
+> db.customers.find({first_name:'Peter'}).pretty();
+{
+	"_id" : ObjectId("5a5ea046aaec84258713b622"),
+	"first_name" : "Peter",
+	"last_name" : "Carey",
+	"age" : 28,
+	"address" : {
+		"street" : "120 Main st",
+		"city" : "Chicago",
+		"state" : "IL",
+		"zipcode" : "37477"
+	},
+	"services" : [
+		{
+			"service_id" : "domain_register",
+			"service_name" : "Domain Registration"
+		}
+	]
+}
+> 
+
+
+
+
+
+
