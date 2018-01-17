@@ -1,0 +1,10 @@
+
+db.products.insert({
+    name: 'Echo Dot (2nd Generation) - Black',
+    category: 'Electronics',
+    model: '-',
+    price: 49.99, 
+    image: 'https://images-na.ssl-images-amazon.com/images/I/61qaMh0rSIL._SL1000_.jpg'
+    details: 'Echo Dot (2nd Generation) is a hands-free, voice-controlled device that uses Alexa to play music, control smart home devices, make calls, send and receive messages, provide information, read the news, set music alarms, read audiobooks from Audible, control Amazon Video on Fire TV, and more' 
+});
+
