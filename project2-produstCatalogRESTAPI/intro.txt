@@ -34,7 +34,20 @@ switched to db catelog
 > 
 
 
-//
+//how to rename a db -- copy it and delete the old one
 db.copyDatabase('old_name', 'new_name');
 use old_name
 db.dropDatabase();
+
+// install restEasy
+
+// - new data
+{
+  "name": "NerfN-Strike Elite Strongarm Blaster",
+  "category": "toy",
+  "model": "-", 
+  "price": 12.99,
+  "image": "https://images-na.ssl-images-amazon.com/images/I/71TgBgvJoNL._SL1500_.jpg",
+  "details": "6 included Elite darts"  
+}
+
