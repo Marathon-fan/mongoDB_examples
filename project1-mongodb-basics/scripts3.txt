@@ -1,0 +1,11 @@
+
+# ------
+
+
+
+> db.customers.find().pretty();
+
+> 
+> db.customers.update({first_name:'Mike'},{first_name:'Mike', last_name:'Hill'})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+>

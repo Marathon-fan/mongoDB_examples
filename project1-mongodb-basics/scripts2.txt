@@ -1,8 +1,127 @@
 
-# ------
+# ------"UPDATE", "UPSERT" . "UPSERT", "REMOVE"
 
 
 
 > db.customers.find().pretty();
+
+> 
+> db.customers.update({first_name:'Mike'},{first_name:'Mike', last_name:'Hill'})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> 
+> db.customers.find().pretty();
+> 
+> db.customers.update({first_name:'Mike'}, {$set:{last_name:'NewHill'}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> 
+> db.customers.update({first_name:'Mike'}, {$set:{last_name:'NewHill', occupation:'Bus Drvier', age: 48}})
+> db.customers.find().pretty();
+> db.customers.update({first_name:'Beth'}, {$set:{last_name:'Jonas', age:26}}, {upsert: true});
+> db.customers.find().pretty();
+
+> db.customers.update({first_name:'Mike'}, {$unset:{age:1}})
+
+
+> db.customers.remove({first_name:'Michelle'})
+WriteResult({ "nRemoved" : 1 })
+> 
+>  db.customers.find().pretty();
+{
+	"_id" : ObjectId("5a5e971d07bd676866ea3574"),
+	"first_name" : "John",
+	"last_name" : "Doe"
+}
+{
+	"_id" : ObjectId("5a5e97f507bd676866ea3575"),
+	"first_name" : "Sam",
+	"last_name" : "Smith"
+}
+{
+	"_id" : ObjectId("5a5e97f507bd676866ea3577"),
+	"first_name" : "Mike",
+	"last_name" : "NewHill",
+	"occupation" : "Bus Drvier"
+}
+{
+	"_id" : ObjectId("5a5e986d07bd676866ea3578"),
+	"first_name" : "Wendy",
+	"last_name" : "Samson",
+	"occupation" : "Nurse"
+}
+{
+	"_id" : ObjectId("5a5e98eb07bd676866ea3579"),
+	"first_name" : "Bob",
+	"last_name" : "Jackson",
+	"occupation" : "Technician",
+	"age" : 36,
+	"birthday" : ISODate("1980-09-11T16:00:00Z")
+}
+{
+	"_id" : ObjectId("5a5e9ce315cad680d904b874"),
+	"first_name" : "Beth",
+	"last_name" : "Jonas",
+	"age" : 26
+}
+> 
+
+
+> db.customers.remove({age:{$gt:30}})
+>  db.customers.find().pretty();
+
+> 
+> db.customers.remove({age:{$gt:30}})
+WriteResult({ "nRemoved" : 1 })
+>  db.customers.find().pretty();
+{
+	"_id" : ObjectId("5a5e971d07bd676866ea3574"),
+	"first_name" : "John",
+	"last_name" : "Doe"
+}
+{
+	"_id" : ObjectId("5a5e97f507bd676866ea3575"),
+	"first_name" : "Sam",
+	"last_name" : "Smith"
+}
+{
+	"_id" : ObjectId("5a5e97f507bd676866ea3577"),
+	"first_name" : "Mike",
+	"last_name" : "NewHill",
+	"occupation" : "Bus Drvier"
+}
+{
+	"_id" : ObjectId("5a5e986d07bd676866ea3578"),
+	"first_name" : "Wendy",
+	"last_name" : "Samson",
+	"occupation" : "Nurse"
+}
+{
+	"_id" : ObjectId("5a5e9ce315cad680d904b874"),
+	"first_name" : "Beth",
+	"last_name" : "Jonas",
+	"age" : 26
+}
+> 
+
+
+
+
+
+//-----
+"UPSERT" definition. "UPSERT" is a DBMS feature that allows a DML statement's author to atomically either insert a row, or on the basis of the row already existing, UPDATE that existing row instead, while safely giving little to no further thought to concurrency.
+
+
+//-----
+UNSET
+
+Behavior
+
+If the field does not exist, then $unset does nothing (i.e. no operation).
+
+When used with $ to match an array element, $unset replaces the matching element with null rather than removing the matching element from the array. This behavior keeps consistent the array size and element positions.
+
+
+//-----
+REMOVE
+
 
 
