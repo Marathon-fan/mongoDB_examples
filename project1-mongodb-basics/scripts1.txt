@@ -1,0 +1,128 @@
+
+# create collections and add customers
+
+$> show dbs;
+
+
+> use acme
+switched to db acme
+> 
+> 
+> show collections
+> 
+> 
+> db.createCollection('customers')
+{ "ok" : 1 }
+> 
+> 
+> db.customers.insert({first_name:'John', last_name:'Doe'});
+WriteResult({ "nInserted" : 1 })
+> 
+> 
+> db.customers.find();
+{ "_id" : ObjectId("5a5e971d07bd676866ea3574"), "first_name" : "John", "last_name" : "Doe" }
+> 
+> 
+> db.customers.find().pretty();
+{
+	"_id" : ObjectId("5a5e971d07bd676866ea3574"),
+	"first_name" : "John",
+	"last_name" : "Doe"
+}
+> 
+
+> db.customers.insert([{first_name:'Sam', last_name:'Smith'}, {first_name:'Michelle', last_name:'Johnson'}, {first_name:'Mike', last_name:'Williams'}]);
+BulkWriteResult({
+	"writeErrors" : [ ],
+	"writeConcernErrors" : [ ],
+	"nInserted" : 3,
+	"nUpserted" : 0,
+	"nMatched" : 0,
+	"nModified" : 0,
+	"nRemoved" : 0,
+	"upserted" : [ ]
+})
+> 
+> db.customers.find().pretty()
+{
+	"_id" : ObjectId("5a5e971d07bd676866ea3574"),
+	"first_name" : "John",
+	"last_name" : "Doe"
+}
+{
+	"_id" : ObjectId("5a5e97f507bd676866ea3575"),
+	"first_name" : "Sam",
+	"last_name" : "Smith"
+}
+{
+	"_id" : ObjectId("5a5e97f507bd676866ea3576"),
+	"first_name" : "Michelle",
+	"last_name" : "Johnson"
+}
+{
+	"_id" : ObjectId("5a5e97f507bd676866ea3577"),
+	"first_name" : "Mike",
+	"last_name" : "Williams"
+}
+> 
+> 
+> db.customers.insert({first_name:'Wendy', last_name:'Samson', occupation:'Nurse'})
+WriteResult({ "nInserted" : 1 })
+
+> 
+> db.customers.insert({first_name:'Bob', last_name:'Jackson', occupation:'Technician', age:36, birthday: new Date('Sep 12, 1980') })
+WriteResult({ "nInserted" : 1 })
+> 
+> 
+> db.customers.find().pretty();
+{
+	"_id" : ObjectId("5a5e971d07bd676866ea3574"),
+	"first_name" : "John",
+	"last_name" : "Doe"
+}
+{
+	"_id" : ObjectId("5a5e97f507bd676866ea3575"),
+	"first_name" : "Sam",
+	"last_name" : "Smith"
+}
+{
+	"_id" : ObjectId("5a5e97f507bd676866ea3576"),
+	"first_name" : "Michelle",
+	"last_name" : "Johnson"
+}
+{
+	"_id" : ObjectId("5a5e97f507bd676866ea3577"),
+	"first_name" : "Mike",
+	"last_name" : "Williams"
+}
+{
+	"_id" : ObjectId("5a5e986d07bd676866ea3578"),
+	"first_name" : "Wendy",
+	"last_name" : "Samson",
+	"occupation" : "Nurse"
+}
+{
+	"_id" : ObjectId("5a5e98eb07bd676866ea3579"),
+	"first_name" : "Bob",
+	"last_name" : "Jackson",
+	"occupation" : "Technician",
+	"age" : 36,
+	"birthday" : ISODate("1980-09-11T16:00:00Z")
+}
+>
+> db.customers.findOne({first_name:'Wendy'})
+{
+	"_id" : ObjectId("5a5e986d07bd676866ea3578"),
+	"first_name" : "Wendy",
+	"last_name" : "Samson",
+	"occupation" : "Nurse"
+}
+> 
+
+
+
+
+
+
+
+
