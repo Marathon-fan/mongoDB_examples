@@ -1,0 +1,16 @@
+
+
+
+Revert "add project2"
+
+This reverts commit d8b8a19b1776ae9d06b4c4bef6764ff20c88a234.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is ahead of 'origin/master' by 2 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	modified:   .gitignore
+#
