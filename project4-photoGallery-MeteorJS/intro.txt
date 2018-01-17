@@ -1,0 +1,69 @@
+
+Project Focus
+
+1 photo Gallery
+
+2 GridFS / Storing files in mongo
+
+3 mongofile utility
+
+4 meteor application
+
+5 meteor packages
+
+
+Meteor.js
+
+1 full stack - MeteorJS
+
+2 Mini-mongo(MongoDB on the client)
+
+3 Subscription based
+
+4 CLI & Meteor packages
+
+5 Cordova for mobile development
+
+
+Server Component
+
+1 Node.js app which communicates with client over DDP(distributed data protocol using web socket) & EJSON
+
+2 connect HTTP Library
+
+3 MongoDB Driver
+
+4 LiveQuery
+
+5 Fibers/Fixtures  //wrapper for node js which can make it asynchronous
+
+Frontend Componenets
+
+1 jQuery & Underscore
+
+2 Tacker
+
+3 Spacebars Templates
+
+4 Blaze
+
+5 Minimongo
+
+6 Session 
+
+
+packages
+
+1 meteor packages / atmoshpere
+
+meteor add twbs:bootstrap
+
+npm packages:
+
+npm install modulename
+
+
+
+
+//////////////////////////////inside mongo shell
+
