@@ -6,4 +6,7 @@
 3 Arrays & Embedded Objects(push is used to add to an array)  
 
 
+## project2  
+1 fetch data from rest api  
+2 post, put and delete requests  
 
